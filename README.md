@@ -39,18 +39,25 @@ frontend
 │  ├─ assets
 │  │  └─ not-found.png
 │  ├─ components
+│  │  ├─ Account.jsx
+│  │  ├─ AccountInput.jsx
 │  │  ├─ AccountLayout.jsx
+│  │  ├─ DefaultLayout.jsx
 │  │  ├─ GlobalStyle.jsx
-│  │  ├─ Layout.jsx
-│  │  └─ LinkButton.jsx
+│  │  ├─ LinkButton.jsx
+│  │  └─ PhatTitle.jsx
 │  ├─ main.jsx
 │  ├─ pages
+│  │  ├─ NotFoundPage.jsx
 │  │  ├─ HomePage.jsx
 │  │  ├─ NotFoundPage.jsx
 │  │  ├─ SigninPage.jsx
 │  │  └─ SignupPage.jsx
 │  └─ utils
 │     ├─ api.jsx
+│     ├─ apiAccount.jsx
+│     ├─ constants.jsx
+│     ├─ getToken.jsx
 │     └─ validators.jsx
 └─ vite.config.js
 

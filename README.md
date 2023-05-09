@@ -14,6 +14,42 @@ This repository is the frontend part of TaskComm project.
 
 ## Project Structure
 
+```
+frontend
+├─ .eslintrc.cjs
+├─ .gitignore
+├─ LICENSE.md
+├─ README.md
+├─ index.html
+├─ jsconfig.json
+├─ package-lock.json
+├─ package.json
+├─ public
+│  ├─ favicon.ico
+│  ├─ logo.png
+│  └─ logo_mobile.png
+├─ src
+│  ├─ App.jsx
+│  ├─ assets
+│  │  └─ not-found.png
+│  ├─ components
+│  │  ├─ AccountLayout.jsx
+│  │  ├─ GlobalStyle.jsx
+│  │  ├─ Layout.jsx
+│  │  └─ LinkButton.jsx
+│  ├─ main.jsx
+│  ├─ pages
+│  │  ├─ HomePage.jsx
+│  │  ├─ NotFoundPage.jsx
+│  │  ├─ SigninPage.jsx
+│  │  └─ SignupPage.jsx
+│  └─ utils
+│     ├─ api.jsx
+│     └─ validators.jsx
+└─ vite.config.js
+
+```
+
 - public/: This folder is for storing static files.
 - src/: This folder is for storing source code.
 - src/assets/: This folder is for storing static asset files.

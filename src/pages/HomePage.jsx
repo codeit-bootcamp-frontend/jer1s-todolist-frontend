@@ -7,14 +7,20 @@ const Container = styled.div`
   margin-top: 4rem;
 `;
 
+const LinkContainer = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
 const Logo = styled.img`
   display: block;
-  width: 40rem;
+  height: 6rem;
+  margin: 0 auto;
   object-fit: contain;
 `;
 
 const StyledLinkButton = styled(LinkButton)`
-  margin-top: 1rem;
+  margin-top: 10rem;
   margin-left: 1rem;
   width: 10rem;
 `;
@@ -22,15 +28,15 @@ const StyledLinkButton = styled(LinkButton)`
 function HomePage() {
   return (
     <Container>
-      <Link to="/">
-        <Logo src={LogoImg} alt="Logo" />
-      </Link>
-      <Link to="/signin">
-        <StyledLinkButton>로그인</StyledLinkButton>
-      </Link>
-      <Link to="/signup">
-        <StyledLinkButton>회원가입</StyledLinkButton>
-      </Link>
+      <Logo src={LogoImg} alt="Logo" />
+      <LinkContainer>
+        <Link to="/signin">
+          <StyledLinkButton>로그인</StyledLinkButton>
+        </Link>
+        <Link to="/signup">
+          <StyledLinkButton>회원가입</StyledLinkButton>
+        </Link>
+      </LinkContainer>
     </Container>
   );
 }

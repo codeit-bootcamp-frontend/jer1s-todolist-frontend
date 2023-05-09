@@ -10,7 +10,7 @@ const LinkButton = styled.button`
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--white);
-  background-color: var(--primary);
+  background-color: var(--primary-light);
 `;
 
 LinkButton.propTypes = {

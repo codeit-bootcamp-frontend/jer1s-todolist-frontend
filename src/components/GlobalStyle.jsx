@@ -5,10 +5,14 @@ const GlobalStyle = createGlobalStyle`
     --primary: #3C9337;
     --primary-light: #5cc957;
     --primary-gray: #2F333F;
+    --background: #F0F6FF;
     --red: #FF5B56;
     --black: #111322;
     --white: #FFFFFF;
-    --gray1: #F0F6FF;
+    --gray1: #3E3E43;
+    --gray2: #9FA6B2;
+    --gray3: #CCD5E3;
+    --eye-toggler: #4B5563;
   }
 
   * {
@@ -21,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    background-color: var(--gray1);
+    background-color: var(--background);
     word-break: keep-all;
     font-family: 'Pretendard', sans-serif;
     font-size: 1.6rem;

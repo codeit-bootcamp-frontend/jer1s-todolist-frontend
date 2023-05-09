@@ -1,4 +1,4 @@
-# Task Comm frontend
+# Task Comm
 
 <div>
   <a href="https://www.npmjs.com/package/npm"><img alt="npm version" src="https://img.shields.io/badge/npm@latest-v9.6.6-CB3837?style=flat&logo=npm&logoColor=CB3837"></a>
@@ -12,11 +12,11 @@
 
 Task Comm project is a web application being developed to provide a web service that allows users to store to-do list.
 
-This repository is the frontend part of TaskComm project.
+This repository is the frontend part of Task Comm project.
 
 ## Deploy
 
-The server can be accessed at []().
+The server can be accessed at [https://taskcomm.netlify.app/](https://taskcomm.netlify.app/).
 
 ## Project Structure
 

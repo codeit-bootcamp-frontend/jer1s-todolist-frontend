@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { isValidEmail, isValidPassword } from "utils/validators";
 import AccountInput from "components/AccountInput";
 import LinkButton from "components/LinkButton";
+import { getUsers } from "utils/api";
+import { loginRequest } from "utils/apiAccount";
 
 const Container = styled.main`
   margin: 24rem auto;
@@ -106,13 +108,24 @@ function Account({ isSignin }) {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (isSignin) {
-      if (email === "flqbml@gmail.com" && password === "asdf1234") {
-        navigate("/");
-      } else {
-        alert("이메일과 비밀번호를 확인해주세요.");
+      try {
+        const users = await getUsers();
+        const user = users.find((user) => user.email === email);
+        if (user) {
+          const response = await loginRequest(user.id, password);
+          if (response) {
+            navigate("/");
+          } else {
+            alert("이메일과 비밀번호를 확인해주세요.");
+          }
+        } else {
+          alert("이메일과 비밀번호를 확인해주세요.");
+        }
+      } catch (err) {
+        console.error(err);
       }
     } else {
       switch (true) {

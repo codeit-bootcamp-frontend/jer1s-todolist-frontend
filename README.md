@@ -8,6 +8,8 @@
   <a href="https://www.npmjs.com/package/styled-components"><img alt="Styled Components version" src="https://img.shields.io/badge/Styled Components-v5.3.10-DB7093?style=flat&logo=styled-components&logoColor=DB7093"></a>
 </div>
 
+<br />
+
 Task Comm project is a web application being developed to provide a web service that allows users to store to-do list.
 
 This repository is the frontend part of TaskComm project.

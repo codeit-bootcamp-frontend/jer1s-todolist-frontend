@@ -1,9 +1,9 @@
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import { isValidEmail, isValidPassword } from "utils/validators";
 import AccountInput from "components/AccountInput";
 import LinkButton from "components/LinkButton";
-import styled from "styled-components";
-import { useState } from "react";
-import { isValidEmail, isValidPassword } from "utils/validators";
 
 const Container = styled.main`
   margin: 24rem auto;

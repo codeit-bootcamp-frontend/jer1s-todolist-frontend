@@ -14,6 +14,10 @@ Task Comm project is a web application being developed to provide a web service 
 
 This repository is the frontend part of TaskComm project.
 
+## Deploy
+
+The server can be accessed at [https://benevolent-bonbon-dbd0f2.netlify.app/](https://benevolent-bonbon-dbd0f2.netlify.app/).
+
 ## Project Structure
 
 ```

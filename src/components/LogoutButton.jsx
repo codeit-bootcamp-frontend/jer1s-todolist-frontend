@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import LinkButton from "components/LinkButton";
 import styled from "styled-components";
-import { logoutRequest } from "utils/apiAccount";
+import { logoutRequest } from "api/Accounts";
 
 const StyledLinkButton = styled(LinkButton)`
   position: fixed;

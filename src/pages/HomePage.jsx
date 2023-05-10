@@ -2,6 +2,7 @@ import styled from "styled-components";
 import LogoImg from "/logo.png";
 import PhatTitle from "components/PhatTitle";
 import LogoutButton from "components/LogoutButton";
+import { getPosts } from "api/Models";
 
 const Container = styled.div`
   margin: 6rem;
@@ -24,6 +25,7 @@ const TaskContainer = styled.div`
 function HomePage() {
   // 로그인 기능 보류
   const userId = 34;
+  const myPosts = getPosts();
 
   return (
     <Container>

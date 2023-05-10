@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { isValidEmail, isValidPassword } from "utils/validators";
 import AccountInput from "components/AccountInput";
 import LinkButton from "components/LinkButton";
-import { getUsers, addUser } from "utils/apiData";
-import { loginRequest } from "utils/apiAccount";
+import { getUsers, addUser } from "api/Models";
+import { loginRequest } from "api/Accounts";
 
 const Container = styled.main`
   margin: 24rem auto;

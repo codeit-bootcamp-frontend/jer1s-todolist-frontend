@@ -33,6 +33,7 @@ function HomePage() {
       navigate("/signin");
     }
   }, []);
+
   return (
     <Container>
       <Logo src={LogoImg} alt="Logo" />

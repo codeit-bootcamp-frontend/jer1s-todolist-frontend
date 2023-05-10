@@ -2,13 +2,7 @@ import api from "api";
 
 export const loginRequest = async (id, password) => {
   try {
-    const response = await api.post(
-      `/login`,
-      { id, password },
-      {
-        withCredentials: true,
-      }
-    );
+    const response = await api.post(`/login`, { id, password });
     return response;
   } catch (err) {
     console.error(`loginRequest error: ${err}`);

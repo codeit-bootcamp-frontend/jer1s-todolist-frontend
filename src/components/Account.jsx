@@ -74,17 +74,15 @@ function Account({ isSignin }) {
           alert("올바른 이메일 형식이 아닙니다.");
           break;
         default:
-          {
-            if (!isSignin) {
-              try {
-                const users = await getUsers();
-                const user = users.find((user) => user.email === email);
-                if (user) {
-                  alert("이미 사용 중인 이메일입니다.");
-                }
-              } catch (err) {
-                console.error(err);
+          if (!isSignin) {
+            try {
+              const users = await getUsers();
+              const user = users.find((user) => user.email === email);
+              if (user) {
+                alert("이미 사용 중인 이메일입니다.");
               }
+            } catch (err) {
+              console.error(err);
             }
           }
           break;

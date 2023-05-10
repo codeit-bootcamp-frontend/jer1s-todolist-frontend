@@ -19,7 +19,7 @@ const TaskContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 10rem auto;
-  max-width: 80rem;
+  max-width: 100rem;
 `;
 
 function HomePage() {
@@ -31,7 +31,7 @@ function HomePage() {
       <Logo src={LogoImg} alt="Logo" />
       <TaskContainer>
         <PhatTitle color="var(--primary)">To do</PhatTitle>
-        <PhatTitle color="var(--red)">In Progress</PhatTitle>
+        <PhatTitle color="var(--red)">Doing</PhatTitle>
         <PhatTitle color="var(--primary-gray)">Done</PhatTitle>
       </TaskContainer>
     </Container>

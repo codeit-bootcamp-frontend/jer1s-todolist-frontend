@@ -5,6 +5,7 @@ import { logoutRequest } from "utils/apiAccount";
 
 const StyledLinkButton = styled(LinkButton)`
   position: fixed;
+  top: 2rem;
   right: 4rem;
   width: 8rem;
 `;

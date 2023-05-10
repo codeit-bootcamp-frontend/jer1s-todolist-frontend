@@ -9,7 +9,11 @@ const isValidAccessToken = async () => {
         Authorization: `Bearer ${accessToken}`,
       },
     });
-    return response;
+    if (!response) {
+      Navigate("/signin");
+    } else {
+      return response;
+    }
   } catch (err) {
     if (err.response.status === 401) {
       const response = await axios.get("/refreshtoken", {

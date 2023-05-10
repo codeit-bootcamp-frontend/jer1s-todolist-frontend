@@ -23,8 +23,7 @@ const TaskContainer = styled.div`
 `;
 
 function HomePage() {
-  const user = isValidAccessToken;
-  console.log(user);
+  const user = isValidAccessToken();
 
   return (
     <Container>

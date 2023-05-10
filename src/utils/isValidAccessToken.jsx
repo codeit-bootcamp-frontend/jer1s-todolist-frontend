@@ -1,31 +1,30 @@
 import axios from "axios";
-import { Navigate } from "react-router-dom";
 import { BASE_URL } from "utils/constants";
 
-const isValidAccessToken = async () => {
+const isValidAccessToken = async (accessToken, refreshToken) => {
   try {
-    const response = await axios.get(`${BASE_URL}/accesstoken"`, {
+    const response = await axios.get(`${BASE_URL}/accesstoken`, {
       headers: {
-        Authorization: `Bearer ${accessToken}`,
+        Cookie: `accessToken=${accessToken}; refreshToken=${refreshToken};`,
       },
     });
-    if (!response) {
-      Navigate("/signin");
-    } else {
-      return response;
-    }
+    return response;
   } catch (err) {
-    if (err.response.status === 401) {
-      const response = await axios.get("/refreshtoken", {
-        headers: {
-          Authorization: `Bearer ${refreshToken}`,
-        },
-      });
-      if (!response) {
-        Navigate("/signin");
-      } else {
+    if (err.response && err.response.status === 401) {
+      try {
+        const response = await axios.get(`${BASE_URL}/refreshtoken`, {
+          headers: {
+            Authorization: `Bearer ${refreshToken}`,
+          },
+        });
+        return response;
+      } catch (err) {
         console.error(`isValidAccessToken error: ${err}`);
+        return null;
       }
+    } else {
+      console.error(`isValidAccessToken error: ${err}`);
+      return null;
     }
   }
 };

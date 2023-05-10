@@ -8,7 +8,7 @@ export const loginRequest = async (id, password) => {
       `${BASE_URL}/login`,
       { id, password },
       {
-        withCredentials: "true",
+        withCredentials: true,
       }
     );
     console.log(response.headers);

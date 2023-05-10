@@ -1,7 +1,5 @@
 import axios from "axios";
-
-const BASE_URL = "https://taskcomm-api-app.herokuapp.com/api";
-// const BASE_URL = "http://localhost:3000/api";
+import { BASE_URL } from "utils/constants";
 
 export const getUsers = async () => {
   try {

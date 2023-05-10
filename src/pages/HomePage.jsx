@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { getAccessToken } from "utils/getToken";
 import LogoImg from "/logo.png";
 import PhatTitle from "components/PhatTitle";
+import isValidAccessToken from "utils/isValidAccessToken";
 
 const Container = styled.div`
   margin-top: 4rem;
@@ -25,15 +26,8 @@ const TaskContainer = styled.div`
 `;
 
 function HomePage() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const isloginned = isValidAccessToken();
-    console.log(isloginned);
-    if (!isloginned) {
-      navigate("/signin");
-    }
-  }, []);
+  const user = isValidAccessToken;
+  console.log(user);
 
   return (
     <Container>

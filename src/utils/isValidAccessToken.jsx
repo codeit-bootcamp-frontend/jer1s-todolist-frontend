@@ -1,9 +1,10 @@
 import axios from "axios";
 import { Navigate } from "react-router-dom";
+import { BASE_URL } from "utils/constants";
 
 const isValidAccessToken = async () => {
   try {
-    const response = await axios.get("/accesstoken", {
+    const response = await axios.get(`${BASE_URL}/accesstoken"`, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },

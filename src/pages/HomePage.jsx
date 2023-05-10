@@ -29,7 +29,7 @@ const StyledLinkButton = styled(LinkButton)`
 `;
 
 function HomePage() {
-  const user = isValidAccessToken();
+  // const user = isValidAccessToken();
 
   return (
     <Container>

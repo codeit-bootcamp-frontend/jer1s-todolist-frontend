@@ -65,7 +65,7 @@ function Account({ isSignin }) {
     }
   };
 
-  const handleBlur = (e) => {
+  const handleBlur = async (e) => {
     if (e.target.name === "email") {
       switch (true) {
         case email === "":
@@ -73,10 +73,20 @@ function Account({ isSignin }) {
         case !isValidEmail(email):
           alert("올바른 이메일 형식이 아닙니다.");
           break;
-        case !isSignin && email === "flqbml@gmail.com":
-          alert("이미 사용 중인 아이디입니다.");
-          break;
         default:
+          {
+            if (!isSignin) {
+              try {
+                const users = await getUsers();
+                const user = users.find((user) => user.email === email);
+                if (user) {
+                  alert("이미 사용 중인 이메일입니다.");
+                }
+              } catch (err) {
+                console.error(err);
+              }
+            }
+          }
           break;
       }
     } else if (e.target.name === "password") {
@@ -145,19 +155,21 @@ function Account({ isSignin }) {
           alert("비밀번호가 일치하지 않습니다.");
           break;
         default:
-          navigate("/");
+          {
+            try {
+              const users = await getUsers();
+              const user = users.find((user) => user.email === email);
+              if (user) {
+                alert("이미 사용 중인 이메일입니다.");
+              } else {
+                await addUser(email, password);
+                navigate("/");
+              }
+            } catch (err) {
+              console.error(err);
+            }
+          }
           break;
-      }
-      try {
-        const users = await getUsers();
-        const user = users.find((user) => user.email === email);
-        if (user) {
-          alert("이미 사용 중인 이메일입니다.");
-        } else {
-          await addUser(email, password);
-        }
-      } catch (err) {
-        console.error(err);
       }
     }
   };

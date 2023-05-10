@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getAccessToken } from "utils/getToken";
+import { isValidAccessToken } from "utils/isValidAccessToken";
 import LogoImg from "/logo.png";
 import PhatTitle from "components/PhatTitle";
 import isValidAccessToken from "utils/isValidAccessToken";

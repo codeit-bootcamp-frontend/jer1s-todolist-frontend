@@ -6,8 +6,9 @@ const PhatTitle = styled.div`
   border: solid ${(props) => props.color};
   border-radius: 0.8rem;
   padding: 0.6rem 0;
-  width: 100%;
-  color: ${(props) => props.color};
+  width: 10rem;
+  background-color: ${(props) => props.color};
+  color: var(--white);
 `;
 
 PhatTitle.propTypes = {

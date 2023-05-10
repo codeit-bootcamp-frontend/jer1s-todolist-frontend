@@ -2,9 +2,10 @@ import styled from "styled-components";
 import LogoImg from "/logo.png";
 import PhatTitle from "components/PhatTitle";
 import isValidAccessToken from "utils/isValidAccessToken";
+import LinkButton from "components/LinkButton";
 
 const Container = styled.div`
-  margin-top: 4rem;
+  margin-top: 6rem;
 `;
 
 const Logo = styled.img`
@@ -17,9 +18,14 @@ const Logo = styled.img`
 const TaskContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 20rem;
   margin: 10rem auto;
   max-width: 80rem;
+`;
+
+const StyledLinkButton = styled(LinkButton)`
+  position: fixed;
+  right: 4rem;
+  width: 8rem;
 `;
 
 function HomePage() {
@@ -27,11 +33,12 @@ function HomePage() {
 
   return (
     <Container>
+      <StyledLinkButton>로그아웃</StyledLinkButton>
       <Logo src={LogoImg} alt="Logo" />
       <TaskContainer>
-        <PhatTitle color="blue">To do</PhatTitle>
-        <PhatTitle color="red">In Progress</PhatTitle>
-        <PhatTitle color="gray">Done</PhatTitle>
+        <PhatTitle color="var(--primary)">To do</PhatTitle>
+        <PhatTitle color="var(--red)">In Progress</PhatTitle>
+        <PhatTitle color="var(--primary-gray)">Done</PhatTitle>
       </TaskContainer>
     </Container>
   );

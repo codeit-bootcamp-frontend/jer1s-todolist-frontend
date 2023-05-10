@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import LogoImg from "/logo.png";
 import PhatTitle from "components/PhatTitle";
-import isValidAccessToken from "utils/isValidAccessToken";
 import LogoutButton from "components/LogoutButton";
 
 const Container = styled.div`
-  margin-top: 6rem;
+  margin: 6rem;
 `;
 
 const Logo = styled.img`
@@ -23,7 +22,8 @@ const TaskContainer = styled.div`
 `;
 
 function HomePage() {
-  // const user = isValidAccessToken();
+  // 로그인 기능 보류
+  const userId = 7;
 
   return (
     <Container>

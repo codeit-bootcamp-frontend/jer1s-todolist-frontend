@@ -2,7 +2,6 @@ import GlobalStyle from "components/GlobalStyle";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { CookiesProvider } from "react-cookie";
-import DefaultLayout from "components/DefaultLayout";
 import AccountLayout from "components/AccountLayout";
 import HomePage from "pages/HomePage";
 import SigninPage from "pages/SigninPage";
@@ -17,9 +16,7 @@ function App() {
         <BrowserRouter>
           <GlobalStyle />
           <Routes>
-            <Route path="/" element={<DefaultLayout />}>
-              <Route index element={<HomePage />} />
-            </Route>
+            <Route exact path="/" element={<HomePage />} />
             <Route path="/" element={<AccountLayout />}>
               <Route path="signin" element={<SigninPage />} />
               <Route path="signup" element={<SignupPage />} />

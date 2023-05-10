@@ -28,8 +28,9 @@ function HomePage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const accessToken = getAccessToken();
-    if (!accessToken) {
+    const isloginned = isValidAccessToken();
+    console.log(isloginned);
+    if (!isloginned) {
       navigate("/signin");
     }
   }, []);

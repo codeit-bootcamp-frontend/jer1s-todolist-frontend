@@ -11,6 +11,7 @@ export const loginRequest = async (id, password) => {
         withCredentials: "true",
       }
     );
+    console.log(response.headers);
     response.headers.get("Set-Cookie");
     return response;
   } catch (error) {

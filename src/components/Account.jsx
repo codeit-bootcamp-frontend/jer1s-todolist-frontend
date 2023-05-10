@@ -115,7 +115,6 @@ function Account({ isSignin }) {
         const users = await getUsers();
         if (users) {
           const user = users.find((user) => user.email === email);
-
           if (user) {
             const response = await loginRequest(user.id, password);
             if (response) {

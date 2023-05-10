@@ -12,7 +12,7 @@ export const loginRequest = async (id, password) => {
       }
     );
     response.headers.get("Set-Cookie");
-    return response.json();
+    return response;
   } catch (error) {
     console.error(`loginRequest error: ${error}`);
   }

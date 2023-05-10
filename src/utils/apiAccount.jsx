@@ -11,7 +11,17 @@ export const loginRequest = async (id, password) => {
       }
     );
     return response;
-  } catch (error) {
-    console.error(`loginRequest error: ${error}`);
+  } catch (err) {
+    console.error(`loginRequest error: ${err}`);
   }
+};
+
+export const logoutRequest = async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/logout`);
+    return response;
+  } catch (err) {
+    console.error(`logoutRequest error: ${err}`);
+  }
+  return;
 };

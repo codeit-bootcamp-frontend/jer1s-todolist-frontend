@@ -2,7 +2,7 @@ import styled from "styled-components";
 import LogoImg from "/logo.png";
 import PhatTitle from "components/PhatTitle";
 import isValidAccessToken from "utils/isValidAccessToken";
-import LinkButton from "components/LinkButton";
+import LogoutButton from "components/LogoutButton";
 
 const Container = styled.div`
   margin-top: 6rem;
@@ -22,18 +22,12 @@ const TaskContainer = styled.div`
   max-width: 80rem;
 `;
 
-const StyledLinkButton = styled(LinkButton)`
-  position: fixed;
-  right: 4rem;
-  width: 8rem;
-`;
-
 function HomePage() {
   // const user = isValidAccessToken();
 
   return (
     <Container>
-      <StyledLinkButton>로그아웃</StyledLinkButton>
+      <LogoutButton />
       <Logo src={LogoImg} alt="Logo" />
       <TaskContainer>
         <PhatTitle color="var(--primary)">To do</PhatTitle>

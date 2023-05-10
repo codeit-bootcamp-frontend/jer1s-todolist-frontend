@@ -3,7 +3,7 @@ import api from "api";
 export const getUsers = async () => {
   try {
     const response = await api.get(`/users`);
-    return response.data;
+    return response;
   } catch (error) {
     console.error(`getUsers error: ${error}`);
   }

@@ -1,9 +1,8 @@
-import axios from "axios";
-import { BASE_URL } from "utils/constants";
+import api from "api";
 
 const isValidAccessToken = async (accessToken, refreshToken) => {
   try {
-    const response = await axios.get(`${BASE_URL}/accesstoken`, {
+    const response = await api.get(`/accesstoken`, {
       headers: {
         Cookie: `accessToken=${accessToken}; refreshToken=${refreshToken};`,
       },
@@ -12,7 +11,7 @@ const isValidAccessToken = async (accessToken, refreshToken) => {
   } catch (err) {
     if (err.response && err.response.status === 401) {
       try {
-        const response = await axios.get(`${BASE_URL}/refreshtoken`, {
+        const response = await api.get(`/refreshtoken`, {
           headers: {
             Authorization: `Bearer ${refreshToken}`,
           },

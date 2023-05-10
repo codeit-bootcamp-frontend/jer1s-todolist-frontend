@@ -1,10 +1,9 @@
-import axios from "axios";
-import { BASE_URL } from "utils/constants";
+import api from "api";
 
 export const loginRequest = async (id, password) => {
   try {
-    const response = await axios.post(
-      `${BASE_URL}/login`,
+    const response = await api.post(
+      `/login`,
       { id, password },
       {
         withCredentials: true,
@@ -18,7 +17,7 @@ export const loginRequest = async (id, password) => {
 
 export const logoutRequest = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}/logout`);
+    const response = await api.get(`/logout`);
     return response;
   } catch (err) {
     console.error(`logoutRequest error: ${err}`);

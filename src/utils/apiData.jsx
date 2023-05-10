@@ -1,9 +1,8 @@
-import axios from "axios";
-import { BASE_URL } from "utils/constants";
+import api from "api";
 
 export const getUsers = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}/users`);
+    const response = await api.get(`/users`);
     return response.data;
   } catch (error) {
     console.error(`getUsers error: ${error}`);
@@ -12,7 +11,7 @@ export const getUsers = async () => {
 
 export const addUser = async (email, password) => {
   try {
-    const response = await axios.post(`${BASE_URL}/users`, {
+    const response = await api.post(`/users`, {
       email,
       password,
     });
@@ -24,7 +23,7 @@ export const addUser = async (email, password) => {
 
 export const getPosts = async () => {
   try {
-    const response = await axios.get(`${BASE_URL}/posts`);
+    const response = await api.get(`/posts`);
     return response.data;
   } catch (error) {
     console.error(`getPosts error: ${error}`);

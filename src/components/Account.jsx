@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { isValidEmail, isValidPassword } from "utils/validators";
 import AccountInput from "components/AccountInput";
 import LinkButton from "components/LinkButton";
-import { getUsers, addUser } from "utils/api";
+import { getUsers, addUser } from "utils/apiData";
 import { loginRequest } from "utils/apiAccount";
 
 const Container = styled.main`

@@ -113,13 +113,16 @@ function Account({ isSignin }) {
     if (isSignin) {
       try {
         const users = await getUsers();
-        const user = users.find((user) => user.email === email);
-        if (user) {
-          const response = await loginRequest(user.id, password);
-          if (response) {
-            navigate("/");
-          } else {
-            alert("이메일과 비밀번호를 확인해주세요.");
+        if (users) {
+          const user = users.find((user) => user.email === email);
+
+          if (user) {
+            const response = await loginRequest(user.id, password);
+            if (response) {
+              navigate("/");
+            } else {
+              alert("이메일과 비밀번호를 확인해주세요.");
+            }
           }
         } else {
           alert("이메일과 비밀번호를 확인해주세요.");

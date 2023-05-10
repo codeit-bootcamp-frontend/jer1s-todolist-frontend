@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://taskcomm-api-app.herokuapp.com/=";
+const BASE_URL = "https://taskcomm-api-app.herokuapp.com";
 
 export const loginRequest = async (id, password) => {
   try {

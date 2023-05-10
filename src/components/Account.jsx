@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { isValidEmail, isValidPassword } from "utils/validators";
 import AccountInput from "components/AccountInput";
 import LinkButton from "components/LinkButton";
-import { getUsers } from "utils/api";
+import { getUsers, addUser } from "utils/api";
 import { loginRequest } from "utils/apiAccount";
 
 const Container = styled.main`
@@ -113,15 +113,13 @@ function Account({ isSignin }) {
     if (isSignin) {
       try {
         const users = await getUsers();
-        if (users) {
-          const user = users.find((user) => user.email === email);
-          if (user) {
-            const response = await loginRequest(user.id, password);
-            if (response) {
-              navigate("/");
-            } else {
-              alert("이메일과 비밀번호를 확인해주세요.");
-            }
+        const user = users.find((user) => user.email === email);
+        if (user) {
+          const response = await loginRequest(user.id, password);
+          if (response) {
+            navigate("/");
+          } else {
+            alert("이메일과 비밀번호를 확인해주세요.");
           }
         } else {
           alert("이메일과 비밀번호를 확인해주세요.");
@@ -137,9 +135,6 @@ function Account({ isSignin }) {
         case !isValidEmail(email):
           alert("올바른 이메일 형식이 아닙니다.");
           break;
-        case email === "flqbml@gmail.com":
-          alert("이미 사용 중인 이메일입니다.");
-          break;
         case password === "" || confirmPassword === "":
           alert("비밀번호를 입력해 주세요.");
           break;
@@ -152,6 +147,17 @@ function Account({ isSignin }) {
         default:
           navigate("/");
           break;
+      }
+      try {
+        const users = await getUsers();
+        const user = users.find((user) => user.email === email);
+        if (user) {
+          alert("이미 사용 중인 이메일입니다.");
+        } else {
+          await addUser(email, password);
+        }
+      } catch (err) {
+        console.error(err);
       }
     }
   };

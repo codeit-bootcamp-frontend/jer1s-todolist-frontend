@@ -23,7 +23,7 @@ const TaskContainer = styled.div`
 
 function HomePage() {
   // 로그인 기능 보류
-  const userId = 7;
+  const userId = 34;
 
   return (
     <Container>

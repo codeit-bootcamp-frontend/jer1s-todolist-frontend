@@ -126,7 +126,6 @@ function Account({ isSignin }) {
 
         if (user) {
           const response = await loginRequest(user.id, password);
-          consoke.log(response);
           if (response) {
             navigate("/");
           } else {

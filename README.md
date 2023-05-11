@@ -21,7 +21,7 @@ The server can be accessed at [https://taskcomm.netlify.app/](https://taskcomm.n
 ## Project Structure
 
 ```
-frontend
+taskcommfrontend
 ├─ .eslintrc.cjs
 ├─ .gitignore
 ├─ LICENSE.md
@@ -36,21 +36,33 @@ frontend
 │  └─ logo_mobile.png
 ├─ src
 │  ├─ App.jsx
+│  ├─ main.jsx
+│  ├─ api
+│  │  ├─ Accounts.jsx
+│  │  ├─ Models.jsx
+│  │  └─ index.jsx
 │  ├─ assets
+│  │  ├─ add-button.png
 │  │  └─ not-found.png
 │  ├─ components
+│  │  ├─ Account.jsx
+│  │  ├─ AccountInput.jsx
 │  │  ├─ AccountLayout.jsx
 │  │  ├─ GlobalStyle.jsx
-│  │  ├─ Layout.jsx
-│  │  └─ LinkButton.jsx
-│  ├─ main.jsx
+│  │  ├─ LinkButton.jsx
+│  │  ├─ LogoutButton.jsx
+│  │  ├─ PhatTitle.jsx
+│  │  ├─ Task.jsx
+│  │  └─ TaskSection.jsx
 │  ├─ pages
+│  │  ├─ ForgotPasswordPage.jsx
 │  │  ├─ HomePage.jsx
 │  │  ├─ NotFoundPage.jsx
 │  │  ├─ SigninPage.jsx
 │  │  └─ SignupPage.jsx
 │  └─ utils
-│     ├─ api.jsx
+│     ├─ constants.jsx
+│     ├─ isValidAccessToken.jsx
 │     └─ validators.jsx
 └─ vite.config.js
 
@@ -58,12 +70,11 @@ frontend
 
 - public/: This folder is for storing static files.
 - src/: This folder is for storing source code.
+- src/api/: This folder is for storing axios api files.
 - src/assets/: This folder is for storing static asset files.
 - src/components/: This folder is for storing React components.
-- src/contexts/: This folder is used for storing React Context functions and constants in the project.
-- src/components/: This folder is for storing custom hooks.
 - src/pages/: This folder is for storing page components that implement routing using React Router Dom.
-- src/utils/: This folder is for storing utility functions and constants used in the project.
+- src/utils/: This folder is for storing utility functions and constants.
 
 ## License
 
@@ -71,7 +82,12 @@ This project is licensed under the MIT License. See the LICENSE.md file for deta
 
 ## Progress
 
-- [ ] 로그인, 회원가입 페이지 작성
-- [ ] 비로그인 시 로그인 페이지로 리다이렉트
+- [x] 로그인, 회원가입 페이지 작성
+- [x] 비로그인 시 로그인 페이지로 리다이렉트
 - [ ] 로그인 기능 구현
-- [ ] 회원가입 기능 구현
+- [x] 회원가입 기능 구현
+- [x] 홈페이지 작성
+- [x] todo list CRUD
+- [ ] todo list item hide 기능
+- [ ] todo list item 드래그앤 드롭으로 order 변경하기
+- [ ] 무한 스크롤링

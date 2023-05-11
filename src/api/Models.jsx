@@ -1,0 +1,59 @@
+import api from "api";
+
+export const getUsers = async () => {
+  try {
+    const response = await api.get(`/users`);
+    return response.data;
+  } catch (error) {
+    console.error(`getUsers error: ${error}`);
+  }
+};
+
+export const addUser = async ({ email, password }) => {
+  try {
+    const response = await api.post(`/users`, {
+      email,
+      password,
+    });
+    return response.data;
+  } catch (error) {
+    console.error(`getUsers error: ${error}`);
+  }
+};
+
+export const getTasks = async (query) => {
+  try {
+    const params = query ? { params: query } : {};
+    const response = await api.get(`/posts`, params);
+    return response.data;
+  } catch (error) {
+    console.error(`getTasks error: ${error}`);
+  }
+};
+
+export const addTasks = async (params) => {
+  try {
+    const response = await api.post(`/posts`, params);
+    return response.data;
+  } catch (error) {
+    console.error(`getTasks error: ${err}`);
+  }
+};
+
+export const deleteTask = async (id) => {
+  try {
+    const response = await api.delete(`/posts/${id}`);
+    return response.data;
+  } catch (err) {
+    console.error(`deleteTask error: ${err}`);
+  }
+};
+
+export const patchTask = async (id, params) => {
+  try {
+    const response = await api.put(`/posts/${id}`, params);
+    return response.data;
+  } catch (err) {
+    console.error(`patchTasks error: ${err}`);
+  }
+};

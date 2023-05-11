@@ -7,7 +7,13 @@ import PropTypes from "prop-types";
 const AddButton = styled.img`
   cursor: pointer;
   border-radius: 1rem;
-  width: 5rem;
+  width: 3rem;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 `;
 
 const Section = ({ type, posts }) => {
@@ -28,10 +34,10 @@ const Section = ({ type, posts }) => {
       break;
   }
   return (
-    <>
+    <Container>
       <PhatTitle color={titleColor}>{titleText}</PhatTitle>
-      {/* <AddButton src={addButtonImg} alt="Add Button" /> */}
-    </>
+      <AddButton src={addButtonImg} alt="Add Button" />
+    </Container>
   );
 };
 

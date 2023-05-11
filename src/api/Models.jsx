@@ -21,9 +21,10 @@ export const addUser = async (email, password) => {
   }
 };
 
-export const getPosts = async () => {
+export const getPosts = async ({ query }) => {
   try {
-    const response = await api.get(`/posts`);
+    const params = query ? { params: query } : {};
+    const response = await api.get(`/posts`, params);
     return response.data;
   } catch (error) {
     console.error(`getPosts error: ${error}`);

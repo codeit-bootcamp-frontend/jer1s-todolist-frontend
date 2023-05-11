@@ -27,7 +27,8 @@ const TaskContainer = styled.div`
 function HomePage() {
   // 로그인 기능 보류
   const userId = 1;
-  // const myPosts = getPosts({ user_id: userId });
+  const myPosts = getPosts({ user_id: userId });
+  console.log(myPosts);
 
   return (
     <>

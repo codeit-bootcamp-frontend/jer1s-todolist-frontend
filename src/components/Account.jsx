@@ -75,10 +75,14 @@ function Account({ isSignin }) {
           break;
         default:
           if (!isSignin) {
-            const users = await getUsers();
-            const user = users.find((user) => user.email === email);
-            if (user) {
-              alert("이미 사용 중인 이메일입니다.");
+            try {
+              const users = await getUsers();
+              const user = users.find((user) => user.email === email);
+              if (user) {
+                alert("이미 사용 중인 이메일입니다.");
+              }
+            } catch (err) {
+              console.error(err);
             }
           }
           break;
@@ -152,26 +156,24 @@ function Account({ isSignin }) {
           alert("비밀번호가 일치하지 않습니다.");
           break;
         default:
-          {
-            try {
-              const users = await getUsers();
-              const user = users.find((user) => user.email === email);
+          try {
+            const users = await getUsers();
+            const user = users.find((user) => user.email === email);
 
-              if (user) {
-                alert("이미 사용 중인 이메일입니다.");
+            if (user) {
+              alert("이미 사용 중인 이메일입니다.");
+            } else {
+              const { id } = await addUser(email, password);
+              const response = await loginRequest(id, password);
+
+              if (response) {
+                navigate("/");
               } else {
-                const { id } = await addUser(email, password);
-                const response = await loginRequest(id, password);
-
-                if (response) {
-                  navigate("/");
-                } else {
-                  alert("로그인에 실패했습니다.");
-                }
+                alert("로그인에 실패했습니다.");
               }
-            } catch (err) {
-              console.error(err);
             }
+          } catch (err) {
+            console.error(err);
           }
           break;
       }

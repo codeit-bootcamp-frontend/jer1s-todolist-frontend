@@ -1,10 +1,11 @@
+import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import styled from "styled-components";
 import LogoImg from "/logo.png";
-import LogoutButton from "components/LogoutButton";
 import { getTasks } from "api/Models";
-import Section from "components/Section";
-import { Helmet } from "react-helmet-async";
 import { TODO_TYPE, PROGRESS_TYPE, DONE_TYPE } from "utils/constants";
+import LogoutButton from "components/LogoutButton";
+import Section from "components/Section";
 
 const Container = styled.div`
   margin: 6rem;
@@ -25,13 +26,20 @@ const TaskContainer = styled.div`
 `;
 
 function HomePage() {
-  const userId = 1; // 로그인 기능 보류
-  const myTasks = getTasks({ userId: userId });
+  const [userId, setUserId] = useState(1);
+  const [myTasks, setMyTasks] = useState([]);
+
+  useEffect(() => {
+    const data = getTasks({ userId: userId });
+    setMyTasks(data);
+    console.log(data);
+  }, []);
+
+  useEffect;
   // const myTasks = [];
   // const todoTasks = myTasks.filter((task) => task.type === TODO_TYPE);
   // const progressTasks = myTasks.filter((task) => task.type === PROGRESS_TYPE);
   // const doneTasks = myTasks.filter((task) => task.type === DONE_TYPE);
-  console.log(myTasks);
 
   return (
     <>

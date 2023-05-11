@@ -48,3 +48,12 @@ export const deleteTask = async (id) => {
     console.error(`deleteTask error: ${err}`);
   }
 };
+
+export const patchTask = async (id, params) => {
+  try {
+    const response = await api.put(`/posts/${id}`, params);
+    return response.data;
+  } catch (err) {
+    console.error(`patchTasks error: ${err}`);
+  }
+};

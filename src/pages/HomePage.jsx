@@ -5,7 +5,7 @@ import LogoImg from "/logo.png";
 import { getTasks } from "api/Models";
 import { TODO_TYPE, PROGRESS_TYPE, DONE_TYPE } from "utils/constants";
 import LogoutButton from "components/LogoutButton";
-import Section from "components/Section";
+import TaskSection from "components/TaskSection";
 
 const Container = styled.div`
   margin: 6rem;
@@ -58,9 +58,9 @@ function HomePage() {
         <LogoutButton />
         <Logo src={LogoImg} alt="Logo" />
         <TaskContainer>
-          <Section type={TODO_TYPE} tasks={[]} />
-          <Section type={PROGRESS_TYPE} tasks={[]} />
-          <Section type={DONE_TYPE} tasks={[]} />
+          <TaskSection type={TODO_TYPE} tasks={todoTasks} />
+          <TaskSection type={PROGRESS_TYPE} tasks={progressTasks} />
+          <TaskSection type={DONE_TYPE} tasks={doneTasks} />
         </TaskContainer>
       </Container>
     </>

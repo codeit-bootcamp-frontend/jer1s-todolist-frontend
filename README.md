@@ -82,7 +82,7 @@ This project is licensed under the MIT License. See the LICENSE.md file for deta
 - [x] 비로그인 시 로그인 페이지로 리다이렉트
 - [ ] 로그인 기능 구현
 - [x] 회원가입 기능 구현
-- [ ] 홈페이지 작성
+- [x] 홈페이지 작성
 - [ ] todo list CRUD
 - [ ] todo list item hide 기능
 - [ ] todo list item 드래그앤 드롭으로 order 변경하기

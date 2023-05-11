@@ -21,12 +21,13 @@ export const addUser = async (email, password) => {
   }
 };
 
-export const getPosts = async ({ query }) => {
+export const getTasks = async ({ query }) => {
   try {
     const params = query ? { params: query } : {};
     const response = await api.get(`/posts`, params);
+    console.log(response.data);
     return response.data;
   } catch (error) {
-    console.error(`getPosts error: ${error}`);
+    console.error(`getTasks error: ${error}`);
   }
 };

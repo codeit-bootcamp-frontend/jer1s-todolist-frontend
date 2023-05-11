@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import LogoImg from "/logo.png";
 import LogoutButton from "components/LogoutButton";
-import { getPosts } from "api/Models";
+import { getTasks } from "api/Models";
 import Section from "components/Section";
 import { Helmet } from "react-helmet-async";
 import { TODO_TYPE, DOING_TYPE, DONE_TYPE } from "utils/constants";
@@ -27,7 +27,7 @@ const TaskContainer = styled.div`
 function HomePage() {
   // 로그인 기능 보류
   const userId = 1;
-  const myPosts = getPosts({ user_id: userId });
+  const myPosts = getTasks({ userId: userId });
   console.log(myPosts);
 
   return (

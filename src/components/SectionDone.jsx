@@ -4,7 +4,7 @@ import PhatTitle from "components/PhatTitle";
 const SectionDone = () => {
   return (
     <>
-      <PhatTitle color="var(--red)">Doing</PhatTitle>
+      <PhatTitle color="var(--primary-gray)">Done</PhatTitle>
     </>
   );
 };

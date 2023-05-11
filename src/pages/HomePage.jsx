@@ -4,7 +4,7 @@ import LogoutButton from "components/LogoutButton";
 import { getTasks } from "api/Models";
 import Section from "components/Section";
 import { Helmet } from "react-helmet-async";
-import { TODO_TYPE, DOING_TYPE, DONE_TYPE } from "utils/constants";
+import { TODO_TYPE, PROGRESS_TYPE, DONE_TYPE } from "utils/constants";
 
 const Container = styled.div`
   margin: 6rem;
@@ -25,10 +25,12 @@ const TaskContainer = styled.div`
 `;
 
 function HomePage() {
-  // 로그인 기능 보류
-  const userId = 1;
-  const myPosts = getTasks({ userId: userId });
-  console.log(myPosts);
+  const userId = 1; // 로그인 기능 보류
+  const myTasks = getTasks({ userId: userId });
+  const todoTasks = myTasks.filter((task) => task.type === TODO_TYPE);
+  const progressTasks = myTasks.filter((task) => task.type === PROGRESS_TYPE);
+  const doneTasks = myTasks.filter((task) => task.type === DONE_TYPE);
+  console.log(todoTasks);
 
   return (
     <>
@@ -39,9 +41,9 @@ function HomePage() {
         <LogoutButton />
         <Logo src={LogoImg} alt="Logo" />
         <TaskContainer>
-          <Section type={TODO_TYPE} posts={[]} />
-          <Section type={DOING_TYPE} posts={[]} />
-          <Section type={DONE_TYPE} posts={[]} />
+          <Section type={TODO_TYPE} tasks={[]} />
+          <Section type={PROGRESS_TYPE} tasks={[]} />
+          <Section type={DONE_TYPE} tasks={[]} />
         </TaskContainer>
       </Container>
     </>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import PhatTitle from "components/PhatTitle";
 import addButtonImg from "assets/add-button.png";
-import { TODO_TYPE, DOING_TYPE, DONE_TYPE } from "utils/constants";
+import { TODO_TYPE, PROGRESS_TYPE, DONE_TYPE } from "utils/constants";
 import PropTypes from "prop-types";
 
 const AddButton = styled.img`
@@ -24,7 +24,7 @@ const Section = ({ type, posts }) => {
       titleColor = "var(--primary)";
       titleText = "To do";
       break;
-    case DOING_TYPE:
+    case PROGRESS_TYPE:
       titleColor = "var(--red)";
       titleText = "Doing";
       break;

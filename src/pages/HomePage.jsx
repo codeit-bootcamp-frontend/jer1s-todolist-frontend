@@ -3,6 +3,9 @@ import LogoImg from "/logo.png";
 import PhatTitle from "components/PhatTitle";
 import LogoutButton from "components/LogoutButton";
 import { getPosts } from "api/Models";
+import SectionTodo from "components/SectionTodo";
+import SectionProgress from "components/SectionProgress";
+import SectionDone from "components/SectionDone";
 
 const Container = styled.div`
   margin: 6rem;
@@ -32,9 +35,9 @@ function HomePage() {
       <LogoutButton />
       <Logo src={LogoImg} alt="Logo" />
       <TaskContainer>
-        <PhatTitle color="var(--primary)">To do</PhatTitle>
-        <PhatTitle color="var(--red)">Doing</PhatTitle>
-        <PhatTitle color="var(--primary-gray)">Done</PhatTitle>
+        <SectionTodo />
+        <SectionProgress />
+        <SectionDone />
       </TaskContainer>
     </Container>
   );

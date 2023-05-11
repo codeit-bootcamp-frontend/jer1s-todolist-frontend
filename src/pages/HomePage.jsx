@@ -26,9 +26,10 @@ const TaskContainer = styled.div`
   max-width: 100rem;
 `;
 
+const Description = styled.p``;
+
 function HomePage() {
   const [userId, setUserId] = useState(1);
-  const [myTasks, setMyTasks] = useState([]);
   const [todoTasks, setTodoTasks] = useState([]);
   const [progressTasks, setProgressTasks] = useState([]);
   const [doneTasks, setDoneTasks] = useState([]);
@@ -40,7 +41,6 @@ function HomePage() {
       (task) => task.section === PROGRESS_TYPE
     );
     const doneResult = result.filter((task) => task.section === DONE_TYPE);
-    setMyTasks(result);
     setTodoTasks(todoResult);
     setProgressTasks(progressResult);
     setDoneTasks(doneResult);
@@ -58,6 +58,7 @@ function HomePage() {
       <Container>
         <LogoutButton />
         <Logo src={LogoImg} alt="Logo" />
+        <Description>삭제: 우클릭</Description>
         <TaskContainer>
           <TaskSection
             type={TODO_TYPE}

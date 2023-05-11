@@ -52,7 +52,7 @@ const TaskSection = ({ type, tasks, userId, handleLoad }) => {
     <Container>
       <PhatTitle color={titleColor}>{titleText}</PhatTitle>
       {tasks.map((task) => (
-        <Task key={task.id} task={task} />
+        <Task key={task.id} task={task} handleLoad={handleLoad} />
       ))}
       <AddButton onClick={handleAddClick} src={addButtonImg} alt="Add Button" />
     </Container>

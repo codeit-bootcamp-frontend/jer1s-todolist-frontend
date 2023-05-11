@@ -36,6 +36,15 @@ export const addTasks = async (params) => {
     const response = await api.post(`/posts`, params);
     return response.data;
   } catch (error) {
-    console.error(`getTasks error: ${error}`);
+    console.error(`getTasks error: ${err}`);
+  }
+};
+
+export const deleteTask = async (id) => {
+  try {
+    const response = await api.delete(`/posts/${id}`);
+    return response.data;
+  } catch (err) {
+    console.error(`deleteTask error: ${err}`);
   }
 };

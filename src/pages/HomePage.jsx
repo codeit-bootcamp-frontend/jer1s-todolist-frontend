@@ -6,6 +6,7 @@ import { getPosts } from "api/Models";
 import SectionTodo from "components/SectionTodo";
 import SectionProgress from "components/SectionProgress";
 import SectionDone from "components/SectionDone";
+import { Helmet } from "react-helmet-async";
 
 const Container = styled.div`
   margin: 6rem;
@@ -31,15 +32,20 @@ function HomePage() {
   const myPosts = getPosts();
 
   return (
-    <Container>
-      <LogoutButton />
-      <Logo src={LogoImg} alt="Logo" />
-      <TaskContainer>
-        <SectionTodo />
-        <SectionProgress />
-        <SectionDone />
-      </TaskContainer>
-    </Container>
+    <>
+      <Helmet>
+        <title>TaskComm</title>
+      </Helmet>
+      <Container>
+        <LogoutButton />
+        <Logo src={LogoImg} alt="Logo" />
+        <TaskContainer>
+          <SectionTodo />
+          <SectionProgress />
+          <SectionDone />
+        </TaskContainer>
+      </Container>
+    </>
   );
 }
 

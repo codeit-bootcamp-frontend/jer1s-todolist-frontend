@@ -29,13 +29,15 @@ function HomePage() {
   const [userId, setUserId] = useState(1);
   const [myTasks, setMyTasks] = useState([]);
 
+  const handleLoad = async () => {
+    const { tasks } = await getTasks({ userId: userId });
+    setMyTasks(tasks);
+  };
+
   useEffect(() => {
-    const data = getTasks({ userId: userId });
-    setMyTasks(data);
-    console.log(data);
+    handleLoad();
   }, []);
 
-  useEffect;
   // const myTasks = [];
   // const todoTasks = myTasks.filter((task) => task.type === TODO_TYPE);
   // const progressTasks = myTasks.filter((task) => task.type === PROGRESS_TYPE);

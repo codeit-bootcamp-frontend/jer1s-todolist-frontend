@@ -28,20 +28,26 @@ const TaskContainer = styled.div`
 function HomePage() {
   const [userId, setUserId] = useState(1);
   const [myTasks, setMyTasks] = useState([]);
+  const [todoTasks, setTodoTasks] = useState([]);
+  const [progressTasks, setProgressTasks] = useState([]);
+  const [doneTasks, setDoneTasks] = useState([]);
 
   const handleLoad = async () => {
-    const { tasks } = await getTasks({ userId: userId });
-    setMyTasks(tasks);
+    const result = await getTasks({ userId: userId });
+    const todoResult = result.filter((task) => task.section === TODO_TYPE);
+    const progressResult = result.filter(
+      (task) => task.section === PROGRESS_TYPE
+    );
+    const doneResult = result.filter((task) => task.section === DONE_TYPE);
+    setMyTasks(result);
+    setTodoTasks(todoResult);
+    setProgressTasks(progressResult);
+    setDoneTasks(doneResult);
   };
 
   useEffect(() => {
     handleLoad();
   }, []);
-
-  // const myTasks = [];
-  // const todoTasks = myTasks.filter((task) => task.type === TODO_TYPE);
-  // const progressTasks = myTasks.filter((task) => task.type === PROGRESS_TYPE);
-  // const doneTasks = myTasks.filter((task) => task.type === DONE_TYPE);
 
   return (
     <>

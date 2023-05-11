@@ -22,6 +22,7 @@ const TaskContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 10rem auto;
+  gap: 1.5rem;
   max-width: 100rem;
 `;
 

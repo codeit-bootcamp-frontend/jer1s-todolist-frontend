@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     --white: #FFFFFF;
     --gray1: #3E3E43;
     --gray2: #9FA6B2;
-    --gray3: #CCD5E3;
+    --gray3: #b7bbc3;
     --eye-toggler: #4B5563;
   }
 

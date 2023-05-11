@@ -4,15 +4,20 @@ import PropTypes from "prop-types";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
-  background-color: var(--black);
+  background-color: var(--gray3);
+  border-radius: 1rem;
   color: var(--white);
+`;
+
+const TaskContent = styled.div`
+  padding: 1rem;
 `;
 
 const Task = ({ task }) => {
   return (
     <Container>
-      <p>{task.title}</p>
+      <TaskContent>{task.title}</TaskContent>
+      {/* <p>{task.comment}</p> */}
     </Container>
   );
 };

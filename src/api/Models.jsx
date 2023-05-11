@@ -9,7 +9,7 @@ export const getUsers = async () => {
   }
 };
 
-export const addUser = async (email, password) => {
+export const addUser = async ({ email, password }) => {
   try {
     const response = await api.post(`/users`, {
       email,
@@ -25,6 +25,15 @@ export const getTasks = async (query) => {
   try {
     const params = query ? { params: query } : {};
     const response = await api.get(`/posts`, params);
+    return response.data;
+  } catch (error) {
+    console.error(`getTasks error: ${error}`);
+  }
+};
+
+export const addTasks = async (params) => {
+  try {
+    const response = await api.post(`/posts`, params);
     return response.data;
   } catch (error) {
     console.error(`getTasks error: ${error}`);

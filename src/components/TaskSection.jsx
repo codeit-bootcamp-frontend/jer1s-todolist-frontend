@@ -4,6 +4,7 @@ import { TODO_TYPE, PROGRESS_TYPE, DONE_TYPE } from "utils/constants";
 import addButtonImg from "assets/add-button.png";
 import PhatTitle from "components/PhatTitle";
 import Task from "components/Task";
+import { addTasks } from "api/Models";
 
 const AddButton = styled.img`
   cursor: pointer;
@@ -18,7 +19,7 @@ const Container = styled.div`
   width: 100%;
 `;
 
-const TaskSection = ({ type, tasks }) => {
+const TaskSection = ({ type, tasks, userId, handleLoad }) => {
   let titleColor = "";
   let titleText = "";
   switch (type) {
@@ -35,13 +36,25 @@ const TaskSection = ({ type, tasks }) => {
       titleText = "Done";
       break;
   }
+
+  const handleAddClick = async () => {
+    await addTasks({
+      title: "new task",
+      comment: "comment",
+      section: type,
+      user_id: userId,
+      is_hide: false,
+    });
+    handleLoad();
+  };
+
   return (
     <Container>
       <PhatTitle color={titleColor}>{titleText}</PhatTitle>
       {tasks.map((task) => (
         <Task key={task.id} task={task} />
       ))}
-      <AddButton src={addButtonImg} alt="Add Button" />
+      <AddButton onClick={handleAddClick} src={addButtonImg} alt="Add Button" />
     </Container>
   );
 };

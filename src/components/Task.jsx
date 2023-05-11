@@ -17,7 +17,6 @@ const Task = ({ task }) => {
   return (
     <Container>
       <TaskContent>{task.title}</TaskContent>
-      {/* <p>{task.comment}</p> */}
     </Container>
   );
 };

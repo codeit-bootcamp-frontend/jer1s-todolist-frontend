@@ -12,7 +12,6 @@ const PhatTitle = styled.div`
 `;
 
 PhatTitle.propTypes = {
-  primary: PropTypes.bool,
   color: PropTypes.string,
 };
 

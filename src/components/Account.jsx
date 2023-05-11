@@ -162,7 +162,7 @@ function Account({ isSignin }) {
             if (user) {
               alert("이미 사용 중인 이메일입니다.");
             } else {
-              const { id } = await addUser(email, password);
+              const { id } = await addUser({ email, password });
               const response = await loginRequest(id, password);
 
               if (response) {

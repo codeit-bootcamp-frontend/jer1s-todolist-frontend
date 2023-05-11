@@ -59,9 +59,24 @@ function HomePage() {
         <LogoutButton />
         <Logo src={LogoImg} alt="Logo" />
         <TaskContainer>
-          <TaskSection type={TODO_TYPE} tasks={todoTasks} />
-          <TaskSection type={PROGRESS_TYPE} tasks={progressTasks} />
-          <TaskSection type={DONE_TYPE} tasks={doneTasks} />
+          <TaskSection
+            type={TODO_TYPE}
+            tasks={todoTasks}
+            userId={userId}
+            handleLoad={handleLoad}
+          />
+          <TaskSection
+            type={PROGRESS_TYPE}
+            tasks={progressTasks}
+            userId={userId}
+            handleLoad={handleLoad}
+          />
+          <TaskSection
+            type={DONE_TYPE}
+            tasks={doneTasks}
+            userId={userId}
+            handleLoad={handleLoad}
+          />
         </TaskContainer>
       </Container>
     </>

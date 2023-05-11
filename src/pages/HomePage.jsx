@@ -1,12 +1,10 @@
 import styled from "styled-components";
 import LogoImg from "/logo.png";
-import PhatTitle from "components/PhatTitle";
 import LogoutButton from "components/LogoutButton";
 import { getPosts } from "api/Models";
-import SectionTodo from "components/SectionTodo";
-import SectionProgress from "components/SectionProgress";
-import SectionDone from "components/SectionDone";
+import Section from "components/Section";
 import { Helmet } from "react-helmet-async";
+import { TODO_TYPE, DOING_TYPE, DONE_TYPE } from "utils/constants";
 
 const Container = styled.div`
   margin: 6rem;
@@ -28,8 +26,8 @@ const TaskContainer = styled.div`
 
 function HomePage() {
   // 로그인 기능 보류
-  const userId = 34;
-  const myPosts = getPosts();
+  const userId = 1;
+  // const myPosts = getPosts({ user_id: userId });
 
   return (
     <>
@@ -40,9 +38,9 @@ function HomePage() {
         <LogoutButton />
         <Logo src={LogoImg} alt="Logo" />
         <TaskContainer>
-          <SectionTodo />
-          <SectionProgress />
-          <SectionDone />
+          <Section type={TODO_TYPE} posts={[]} />
+          <Section type={DOING_TYPE} posts={[]} />
+          <Section type={DONE_TYPE} posts={[]} />
         </TaskContainer>
       </Container>
     </>

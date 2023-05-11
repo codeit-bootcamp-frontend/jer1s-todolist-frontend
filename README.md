@@ -21,7 +21,7 @@ The server can be accessed at [https://taskcomm.netlify.app/](https://taskcomm.n
 ## Project Structure
 
 ```
-frontend
+taskcommfrontend
 ├─ .eslintrc.cjs
 ├─ .gitignore
 ├─ LICENSE.md
@@ -36,28 +36,33 @@ frontend
 │  └─ logo_mobile.png
 ├─ src
 │  ├─ App.jsx
+│  ├─ main.jsx
+│  ├─ api
+│  │  ├─ Accounts.jsx
+│  │  ├─ Models.jsx
+│  │  └─ index.jsx
 │  ├─ assets
+│  │  ├─ add-button.png
 │  │  └─ not-found.png
 │  ├─ components
 │  │  ├─ Account.jsx
 │  │  ├─ AccountInput.jsx
 │  │  ├─ AccountLayout.jsx
-│  │  ├─ DefaultLayout.jsx
 │  │  ├─ GlobalStyle.jsx
 │  │  ├─ LinkButton.jsx
-│  │  └─ PhatTitle.jsx
-│  ├─ main.jsx
+│  │  ├─ LogoutButton.jsx
+│  │  ├─ PhatTitle.jsx
+│  │  ├─ Task.jsx
+│  │  └─ TaskSection.jsx
 │  ├─ pages
-│  │  ├─ NotFoundPage.jsx
+│  │  ├─ ForgotPasswordPage.jsx
 │  │  ├─ HomePage.jsx
 │  │  ├─ NotFoundPage.jsx
 │  │  ├─ SigninPage.jsx
 │  │  └─ SignupPage.jsx
 │  └─ utils
-│     ├─ api.jsx
-│     ├─ apiAccount.jsx
 │     ├─ constants.jsx
-│     ├─ getToken.jsx
+│     ├─ isValidAccessToken.jsx
 │     └─ validators.jsx
 └─ vite.config.js
 
@@ -65,12 +70,11 @@ frontend
 
 - public/: This folder is for storing static files.
 - src/: This folder is for storing source code.
+- src/api/: This folder is for storing axios api files.
 - src/assets/: This folder is for storing static asset files.
 - src/components/: This folder is for storing React components.
-- src/contexts/: This folder is used for storing React Context functions and constants in the project.
-- src/components/: This folder is for storing custom hooks.
 - src/pages/: This folder is for storing page components that implement routing using React Router Dom.
-- src/utils/: This folder is for storing utility functions and constants used in the project.
+- src/utils/: This folder is for storing utility functions and constants.
 
 ## License
 

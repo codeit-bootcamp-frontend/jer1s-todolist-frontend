@@ -75,7 +75,7 @@ function Account({ isSignin }) {
           break;
         default:
           if (!isSignin) {
-            const { users } = await getUsers();
+            const users = await getUsers();
             const user = users.find((user) => user.email === email);
             if (user) {
               alert("이미 사용 중인 이메일입니다.");
@@ -117,7 +117,7 @@ function Account({ isSignin }) {
 
     if (isSignin) {
       try {
-        const { users } = await getUsers();
+        const users = await getUsers();
         const user = users.find((user) => user.email === email);
 
         if (user) {

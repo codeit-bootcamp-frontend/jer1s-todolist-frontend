@@ -21,7 +21,7 @@ export const addUser = async (email, password) => {
   }
 };
 
-export const getTasks = async ({ query }) => {
+export const getTasks = async (query) => {
   try {
     const params = query ? { params: query } : {};
     const response = await api.get(`/posts`, params);

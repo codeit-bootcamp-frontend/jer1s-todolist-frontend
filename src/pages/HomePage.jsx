@@ -27,10 +27,11 @@ const TaskContainer = styled.div`
 function HomePage() {
   const userId = 1; // 로그인 기능 보류
   const myTasks = getTasks({ userId: userId });
-  const todoTasks = myTasks.filter((task) => task.type === TODO_TYPE);
-  const progressTasks = myTasks.filter((task) => task.type === PROGRESS_TYPE);
-  const doneTasks = myTasks.filter((task) => task.type === DONE_TYPE);
-  console.log(todoTasks);
+  // const myTasks = [];
+  // const todoTasks = myTasks.filter((task) => task.type === TODO_TYPE);
+  // const progressTasks = myTasks.filter((task) => task.type === PROGRESS_TYPE);
+  // const doneTasks = myTasks.filter((task) => task.type === DONE_TYPE);
+  console.log(myTasks);
 
   return (
     <>

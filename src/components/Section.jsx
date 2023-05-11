@@ -16,7 +16,7 @@ const Container = styled.div`
   gap: 1.5rem;
 `;
 
-const Section = ({ type, posts }) => {
+const Section = ({ type, tasks }) => {
   let titleColor = "";
   let titleText = "";
   switch (type) {
@@ -43,7 +43,7 @@ const Section = ({ type, posts }) => {
 
 Section.propTypes = {
   type: PropTypes.string.isRequired,
-  posts: PropTypes.array.isRequired,
+  tasks: PropTypes.array.isRequired,
 };
 
 export default Section;

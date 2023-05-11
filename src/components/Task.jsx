@@ -74,7 +74,7 @@ const Task = ({ task, handleLoad }) => {
           /> */}
         </form>
       ) : (
-        <TaskContent>{task.title}</TaskContent>
+        <TaskContent>{taskTitle || task.title}</TaskContent>
       )}
     </Container>
   );

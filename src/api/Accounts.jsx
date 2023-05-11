@@ -1,4 +1,4 @@
-import api from "api";
+import api from "api/index";
 
 export const loginRequest = async (id, password) => {
   try {
